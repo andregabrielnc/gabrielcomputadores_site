@@ -1,0 +1,191 @@
+/* Article Page Styles */
+.article-page {
+    padding: 120px 0 60px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.back-link:hover {
+    gap: 12px;
+}
+
+.article-meta {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 15px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.article-meta i {
+    margin-right: 5px;
+}
+
+.article-page h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+    line-height: 1.3;
+}
+
+.article-page h2 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin: 35px 0 15px;
+}
+
+.article-page p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 18px;
+}
+
+.article-page ul,
+.article-page ol {
+    margin: 15px 0 25px 25px;
+    color: var(--text-light);
+}
+
+.article-page li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+    font-size: 1.02rem;
+}
+
+.article-page .btn-primary {
+    margin-top: 30px;
+    display: inline-flex;
+}
+
+.article-footer {
+    background: var(--dark);
+    color: #a0aec0;
+    padding: 25px 0;
+    text-align: center;
+}
+
+.article-footer a {
+    color: var(--primary-color);
+}
+
+/* Blog Cards Grid on Landing Page */
+.blog {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.blog-card {
+    background: var(--white);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.blog-card-icon {
+    height: 60px;
+    padding: 25px 25px 0;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+}
+
+.blog-card-body {
+    padding: 15px 25px 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card-body h3 {
+    font-size: 1.15rem;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.blog-card-body p {
+    font-size: 0.92rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.blog-card-body .read-more {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.blog-see-all {
+    text-align: center;
+    margin-top: 45px;
+}
+
+@media (max-width: 768px) {
+    .article-page h1 {
+        font-size: 1.8rem;
+    }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* FAQ WhatsApp CTA */
+.faq-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.faq-whatsapp:hover {
+    background-color: #1fb855;
+    transform: translateY(-2px);
+}
+
+.faq-whatsapp i {
+    font-size: 1.1rem;
+}
