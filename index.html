@@ -777,18 +777,58 @@
     <!-- Scripts -->
     <script>
         // Hamburger Menu Logic
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', function () {
+            navbar.classList.toggle('scrolled', window.scrollY > 20);
+        }, { passive: true });
+
+        // Hamburger menu with overlay
         const hamburgerMenu = document.getElementById('hamburgerMenu');
         const navLinks = document.getElementById('navLinks');
 
-        hamburgerMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+        // Create overlay element
+        const overlay = document.createElement('div');
+        overlay.className = 'nav-overlay';
+        document.body.appendChild(overlay);
+
+        function openMenu() {
+            navLinks.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        hamburgerMenu.addEventListener('click', function () {
+            navLinks.classList.contains('active') ? closeMenu() : openMenu();
         });
+
+        overlay.addEventListener('click', closeMenu);
 
         // Close mobile nav when a link is clicked
         document.querySelectorAll('.nav-links a').forEach(function (link) {
-            link.addEventListener('click', function () {
-                navLinks.classList.remove('active');
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Fade-in on scroll
+        const fadeEls = document.querySelectorAll('.feature-card, .service-card, .review-card, .team-card, .contract-card, .blog-card, .faq-item, .about-grid, .section-header');
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
             });
+        }, { threshold: 0.1 });
+
+        fadeEls.forEach(function (el) {
+            el.classList.add('fade-in');
+            observer.observe(el);
         });
 
         // FAQ Accordion Logic

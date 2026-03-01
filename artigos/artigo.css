@@ -1,6 +1,6 @@
 /* Article Page Styles */
 .article-page {
-    padding: 120px 0 60px;
+    padding: 110px 0 64px;
     max-width: 800px;
     margin: 0 auto;
 }
@@ -9,95 +9,106 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: var(--primary-color);
+    color: var(--primary);
     font-weight: 600;
-    margin-bottom: 25px;
+    font-size: 0.92rem;
+    margin-bottom: 24px;
     text-decoration: none;
     transition: var(--transition);
+    min-height: 44px;
 }
 
 .back-link:hover {
     gap: 12px;
+    color: var(--accent);
 }
 
 .article-meta {
     display: flex;
-    gap: 25px;
-    margin-bottom: 15px;
-    color: var(--text-light);
-    font-size: 0.9rem;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+    color: var(--text-muted);
+    font-size: 0.88rem;
 }
 
 .article-meta i {
     margin-right: 5px;
+    color: var(--accent);
 }
 
 .article-page h1 {
     font-family: var(--font-heading);
-    font-size: 2.5rem;
-    color: var(--text-dark);
-    margin-bottom: 30px;
-    line-height: 1.3;
+    font-size: 2.4rem;
+    color: var(--text);
+    margin-bottom: 32px;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
 }
 
 .article-page h2 {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
-    color: var(--text-dark);
-    margin: 35px 0 15px;
+    font-size: 1.45rem;
+    color: var(--text);
+    margin: 40px 0 16px;
+    padding-left: 14px;
+    border-left: 3px solid var(--accent);
 }
 
 .article-page p {
-    font-size: 1.05rem;
+    font-size: 1.04rem;
     line-height: 1.8;
-    color: var(--text-light);
+    color: var(--text-muted);
     margin-bottom: 18px;
 }
 
 .article-page ul,
 .article-page ol {
-    margin: 15px 0 25px 25px;
-    color: var(--text-light);
+    margin: 16px 0 24px 24px;
+    color: var(--text-muted);
 }
 
 .article-page li {
     margin-bottom: 10px;
     line-height: 1.7;
-    font-size: 1.02rem;
+    font-size: 1rem;
 }
 
 .article-page .btn-primary {
-    margin-top: 30px;
+    margin-top: 32px;
     display: inline-flex;
 }
 
 .article-footer {
-    background: var(--dark);
-    color: #a0aec0;
-    padding: 25px 0;
+    background: #1e293b;
+    color: #94a3b8;
+    padding: 24px 0;
     text-align: center;
+    font-size: 0.9rem;
 }
 
 .article-footer a {
-    color: var(--primary-color);
+    color: var(--accent);
 }
 
-/* Blog Cards Grid on Landing Page */
+/* ===============================
+   Blog Cards Grid (Landing Page)
+=============================== */
 .blog {
-    padding: 80px 0;
-    background-color: var(--white);
+    padding: 88px 0;
+    background-color: var(--surface);
 }
 
 .blog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
 }
 
 .blog-card {
-    background: var(--white);
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
     overflow: hidden;
     transition: var(--transition);
     text-decoration: none;
@@ -109,60 +120,58 @@
 .blog-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
-    border-color: var(--primary-color);
+    border-color: var(--primary);
 }
 
 .blog-card-icon {
-    height: 60px;
-    padding: 25px 25px 0;
-    font-size: 2.2rem;
-    color: var(--primary-color);
+    height: 56px;
+    padding: 20px 22px 0;
+    font-size: 2rem;
+    color: var(--primary);
+    background: linear-gradient(180deg, var(--primary-light) 0%, transparent 100%);
 }
 
 .blog-card-body {
-    padding: 15px 25px 25px;
+    padding: 14px 22px 22px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 
 .blog-card-body h3 {
-    font-size: 1.15rem;
-    color: var(--text-dark);
-    margin-bottom: 10px;
+    font-size: 1.05rem;
+    color: var(--text);
+    margin-bottom: 8px;
     line-height: 1.4;
+    font-family: var(--font-heading);
+    font-weight: 600;
 }
 
 .blog-card-body p {
-    font-size: 0.92rem;
-    color: var(--text-light);
+    font-size: 0.9rem;
+    color: var(--text-muted);
     line-height: 1.6;
     flex-grow: 1;
 }
 
 .blog-card-body .read-more {
-    color: var(--primary-color);
+    color: var(--accent);
     font-weight: 600;
-    font-size: 0.9rem;
-    margin-top: 15px;
+    font-size: 0.88rem;
+    margin-top: 14px;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
+    transition: gap 0.2s ease;
+}
+
+.blog-card:hover .read-more {
+    gap: 8px;
 }
 
 .blog-see-all {
     text-align: center;
-    margin-top: 45px;
-}
-
-@media (max-width: 768px) {
-    .article-page h1 {
-        font-size: 1.8rem;
-    }
-
-    .blog-grid {
-        grid-template-columns: 1fr;
-    }
+    margin-top: 44px;
 }
 
 /* FAQ WhatsApp CTA */
@@ -170,22 +179,55 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #25d366;
+    margin-top: 16px;
+    padding: 10px 22px;
+    background-color: var(--whatsapp);
     color: #fff;
-    border-radius: 8px;
+    border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.9rem;
-    transition: background 0.3s ease, transform 0.2s ease;
+    font-size: 0.88rem;
+    transition: var(--transition);
+    min-height: 44px;
 }
 
 .faq-whatsapp:hover {
-    background-color: #1fb855;
+    background-color: var(--whatsapp-hover);
     transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(37,211,102,.3);
 }
 
 .faq-whatsapp i {
     font-size: 1.1rem;
+}
+
+/* ===============================
+   Responsive
+=============================== */
+@media (max-width: 768px) {
+    .article-page {
+        padding: 96px 0 48px;
+    }
+
+    .article-page h1 {
+        font-size: 1.8rem;
+    }
+
+    .article-page h2 {
+        font-size: 1.25rem;
+    }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .article-meta {
+        gap: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .article-page h1 {
+        font-size: 1.6rem;
+    }
 }
