@@ -6,7 +6,9 @@ Site institucional da **Gabriel Computadores**, assistência técnica localizada
 - **URL de produção:** https://gabrielcomputadores.com.br
 - **Repositório:** https://github.com/andregabrielnc/gabrielcomputadores_site
 - **Branch principal:** `master`
-- **Deploy:** Coolify (auto-deploy via webhook GitHub → push no `master`)
+- **Deploy:** FTP para `public_html/` no cPanel (hospedagem compartilhada)
+- **FTP:** `ftp://ftp.gabrielcomputadores.com.br` — usuário `site@gabrielcomputadores.com.br`
+- **Diretório no servidor:** `/public_html/`
 
 ## Estrutura
 ```
@@ -16,7 +18,7 @@ Site institucional da **Gabriel Computadores**, assistência técnica localizada
 ├── sitemap.xml         # Sitemap para buscadores
 ├── robots.txt          # Instruções para crawlers
 ├── assets/             # Imagens (logo, hero, serviços)
-└── artigos/            # 12 artigos de blog
+└── artigos/            # 15 artigos de blog
     ├── artigo.css      # Estilos dos artigos
     └── *.html          # Artigos individuais
 ```
@@ -26,10 +28,11 @@ Site institucional da **Gabriel Computadores**, assistência técnica localizada
 - JavaScript vanilla (FAQ accordion, slider de reviews)
 - Fontes: Google Fonts (Inter + Outfit)
 - Ícones: Font Awesome 6.4
-- Deploy: nginx:alpine via Docker no Coolify
+- Hospedagem: cPanel (deploy via FTP para `public_html/`)
 
 ## Git
-- Commit e push para `master` dispara deploy automático no Coolify
+- Repositório no GitHub para versionamento
+- Deploy **não é automático** — após commit/push, enviar os arquivos alterados via FTP para `public_html/`
 - Usuário: André Gabriel <andregabrielnc@gmail.com>
 - Sempre usar mensagem de commit descritiva em português
 
@@ -53,10 +56,14 @@ Site institucional da **Gabriel Computadores**, assistência técnica localizada
 10. manutencao-preventiva.html
 11. upgrade-pc-gamer.html
 12. manutencao-pc-gamer.html
+13. carregadores-notebook.html
+14. perifericos-computador.html
+15. licenca-software-microsoft.html
 
 ## Ao adicionar novo artigo
 1. Criar `artigos/nome-do-artigo.html` seguindo o padrão dos existentes
 2. Incluir todas as meta tags SEO (canonical, og:*, twitter:*, keywords, Article Schema)
 3. Adicionar card no `index.html` na seção `#blog`
 4. Adicionar URL no `sitemap.xml`
-5. Fazer commit e push → deploy automático
+5. Fazer commit e push no GitHub
+6. Enviar os arquivos alterados via FTP para `public_html/`
