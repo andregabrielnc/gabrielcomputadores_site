@@ -163,10 +163,39 @@
     align-items: center;
     gap: 5px;
     transition: gap 0.2s ease;
+    text-decoration: none;
 }
 
 .blog-card:hover .read-more {
     gap: 8px;
+}
+
+/* Blog WhatsApp CTA */
+.blog-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    padding: 7px 16px;
+    background-color: var(--whatsapp);
+    color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.82rem;
+    transition: var(--transition);
+    min-height: 36px;
+    width: fit-content;
+}
+
+.blog-whatsapp:hover {
+    background-color: var(--whatsapp-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(37,211,102,.3);
+}
+
+.blog-whatsapp i {
+    font-size: 1rem;
 }
 
 .blog-see-all {
